@@ -5,10 +5,11 @@ import ProductsLogo from "../home/category/ProductsLogo";
 import LimitedProduct from "../home/LimitedProduct";
 import SpringCollection from "../home/SpringCollection";
 import StartingCategory from "../home/StartingCategory";
-//import StartingCategory from "../home/StartingCategory";
+
 
 import TrendyProducts from "../home/TrendyProducts";
 import Support from "../home/support";
+import Footer from "../layout/Footer";
 
 
 
@@ -28,7 +29,8 @@ const Home = () => {
       <StartingCategory />
       <LimitedProduct />
       <ProductsLogo />
-     <Support/>
+      <Support />
+     
    
    
   

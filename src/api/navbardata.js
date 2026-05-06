@@ -3,11 +3,13 @@ export const navitems = [
   
   {
     id: 1,
-    name: "HOME" ,
+    name: "HOME",
+    url: "/"
   },
   {
    id: 2,
-    name: "SHOP" ,
+    name: "SHOP",
+    url: "/SHOP"
   },
   {
    id: 3,

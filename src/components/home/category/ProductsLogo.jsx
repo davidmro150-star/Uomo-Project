@@ -28,7 +28,7 @@ const ProductsLogo = () => {
           <h3 className='font-jost  leading-6 text-primary-black  font-regular text-[35px] pb-8'>@UOMO</h3>
         </div>
         <div className='grid grid-cols-6 mt-8.5 gap-4'>
-          <Image className=" mb-4" src={logop} alt="image" />
+          <Image className=" mb-4 border-2px border-primary-gray-500" src={logop} alt="image" />
           <Image className=" mb-4" src={logop2} alt="image" />
           <Image className=" mb-4" src={logop3} alt="image" />
           <Image className=" mb-4" src={logop4} alt="image" />

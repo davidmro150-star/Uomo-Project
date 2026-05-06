@@ -29,3 +29,7 @@
 #banner.slick-dots .slick-active div {
   @apply bg-primary-black; 
 }
+
+.list-item{
+  @apply font-jost text-primary-black text-base font-medium;
+}

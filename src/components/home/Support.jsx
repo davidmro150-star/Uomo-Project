@@ -7,7 +7,7 @@ import Image from '../common/Image';
 
 const Support = () => {
   return (
-    <section className='mb-25'>
+    <section className=''>
       <Container className="mx-auto">
         <div className='flex flex-cols-3 gap-64 text-center justify-center'>
 

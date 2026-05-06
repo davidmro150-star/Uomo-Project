@@ -4,6 +4,7 @@ import React from 'react'
 import { navitems } from '../../api/navbardata';
 import Container from '../ui/Container';
 import Image from '../common/Image';
+import { Link } from 'react-router';
 
 
 const Header = () => {
@@ -17,14 +18,19 @@ const Header = () => {
         <Container>
 
           <div className='flex items-center justify-between'>
-             <div className='flex items-center'>
-                 <Image src="images/logo.png" alt="logo" />
+            <div className='flex items-center'>
+              
+              <Link to ="/">
+                   <Image src="images/logo.png" alt="logo" />
+              </Link>
+            
           
           <ul className= "u-list">
             {
               navitems?.map((item, index) => (
-                <li className= "list-item"key={item.id}>
-                  {item.name}</li>
+                <li className="list-item" key={item.id}>
+                  <Link to={item.url}>{item.name}</Link>
+                  </li>
               ))
           }
           
