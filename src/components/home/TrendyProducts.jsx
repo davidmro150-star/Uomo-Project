@@ -33,7 +33,7 @@ const TrendyProducts = () => {
   };
   
     function getProducts () {
-      axios.get("https://dummyjson.com/products")
+      axios.get("https://dummyjson.com/products?page=1&limit=60")
         .then((res) => {
         setProducts(res.data.products);
          
