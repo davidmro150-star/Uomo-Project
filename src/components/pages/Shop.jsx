@@ -31,7 +31,7 @@ const Shop = () => {
     <main>
       <ShopBanner />
       <Container>
-        <div className='flex justify-between'>
+        <div className='flex justify-between  mt-9 mb-10'>
           <Breadcrumb />
           <SortAndView />
         </div>
