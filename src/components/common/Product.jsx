@@ -4,11 +4,11 @@ import ProductImage from "../../assets/images/productimage.png";
 
 const Product = ({item}) => {
   return (
-    <div className='max-w-82.5 relative group'>
+    <div className='w-full relative group'>
 
       <div className='group'>
 
-          <Image className='' src={item.thumbnail|| ProductImage} alt="product" />
+          <Image className='w-full' src={item.thumbnail|| ProductImage} alt="product" />
        <div className='bg-white shadow shadow-gray-100 group-hover:bottom-30 duration-500 group-hover:visible text-center absolute w-77.5 left-2/4 translate-x-[-50%] pt-4 pb-2.5 bottom-20 invisible'>
         <button className='font-jost font-medium text-sm leading-6'>ADD TO CART</button>
       </div>

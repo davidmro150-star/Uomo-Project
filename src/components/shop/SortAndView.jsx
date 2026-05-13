@@ -1,6 +1,12 @@
 import React from 'react'
 
-const SortAndView = () => {
+const SortAndView = ({setView}) => {
+
+  let viewproduct = [2, 3, 4]
+  const handleView = (view) => (
+    setView(view)
+    
+  )
   return (
  
     <div className="relative flex  gap-15.5 after:absolute after:top-0 after:-right-7.5 after:h-5.5 after:w-0.5 after:bg-[#E4E4E4]  after:content-[''] ">
@@ -17,9 +23,16 @@ const SortAndView = () => {
       
       <div className='flex items-center'>
         <h2 className='font-jost font-medium text-primary-black text-base leading-6 uppercase'>View</h2>
-        <button className='font-jost ml-4.5 font-medium text-primary-black text-base leading-6 uppercase'>2</button>
-        <button className='font-jost ml-4.5 font-medium text-primary-black text-base leading-6 uppercase'>3</button>
-        <button className='font-jost  ml-4.5 font-medium text-primary-black text-base leading-6 uppercase'>4</button>
+
+        {
+          viewproduct.map((item) => (
+            
+            <button onClick={()=>handleView(item)} className='font-jost ml-4.5 font-medium text-primary-black text-base leading-6 uppercase'>{item}</button>
+          ))
+       }
+
+
+    
       </div>
    </div>
 

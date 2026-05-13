@@ -10,6 +10,8 @@ import Allproducts from '../shop/Allproducts'
 const Shop = () => {
   const [products, setProducts] = useState([]);
 
+  const [view, setView] = useState(4);
+
      function getProducts () {
   axios.get("https://dummyjson.com/products?page=1&limit=60")
     .then((res) => {
@@ -27,17 +29,18 @@ const Shop = () => {
 
   }, []);
 
+  console.log(view) 
   return (
     <main>
       <ShopBanner />
       <Container>
         <div className='flex justify-between  mt-9 mb-10'>
           <Breadcrumb />
-          <SortAndView />
+          <SortAndView setView={setView} />
         </div>
       </Container>
     
-      <Allproducts items={products} />
+      <Allproducts items={products} view={view} />
     </main>
   )
 }
