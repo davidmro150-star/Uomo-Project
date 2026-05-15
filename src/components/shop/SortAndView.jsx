@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoFilterSharp } from "react-icons/io5";
 
 const SortAndView = ({setView}) => {
 
@@ -33,6 +34,10 @@ const SortAndView = ({setView}) => {
 
 
     
+      </div>
+      <div className='flex gap-2.5'>
+        <IoFilterSharp />
+         <h2 className='font-jost font-medium text-primary-black text-base leading-6 uppercase'>Filter</h2>
       </div>
    </div>
 
