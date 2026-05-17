@@ -12,11 +12,11 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
 
   const [view, setView] = useState(4);
-  const [showproduct, setshowproduct] = useState(20);
-  let totalproduct = products.length;
+ const [showproduct, setshowproduct] = useState(20);
+let totalproduct = products.length;
 
 
-  let result = Math.round((showproduct/ totalproduct) * 100)
+let result = Math.round((showproduct/ totalproduct) * 100)
  
 
 
@@ -65,9 +65,10 @@ const Shop = () => {
 
       <div className='w-75 h-1.5 mx-auto bg-[#E4E4E4] rounded-[10px] mt-2'>
 
-        <div style={{ width: `${result}%` }}
+     
+       <div style={{ width: `${result}%` }}
           
-          className={`h-full bg-primary-black  rounded-[10px]`}></div>
+          className={`h-full bg-primary-black  rounded-[10px]`}></div>  
 
       </div>
 
