@@ -1,6 +1,9 @@
 import React, { useEffect, useState,useRef } from 'react'
 import { IoFilterSharp } from "react-icons/io5";
 import { AiOutlineClose } from "react-icons/ai";
+import { CiSearch } from "react-icons/ci";
+import { Range, getTrackBackground } from "react-range";
+ 
 
 const SortAndView = ({setView}) => {
 
@@ -48,7 +51,7 @@ const SortAndView = ({setView}) => {
   };
 }, [filterModal]);
 
-
+   const [values, setValues] = React.useState([50,100]);
 
   return (
  
@@ -97,7 +100,7 @@ const SortAndView = ({setView}) => {
       "0px 10px 25px 0px rgba(34, 34, 34, 0.35)",
   }} >
 
-        <div className='bg-[#ffffff] px-10  scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent'>
+        <div className='bg-[#ffffff] px-10 '>
         <div className='flex items-center justify-between pt-8.25 pb-6.5'>
               <h3 className='font-jost font-medium text-base text-primary-black'>FILTER BY</h3>
               
@@ -150,7 +153,8 @@ const SortAndView = ({setView}) => {
 
         <span>^</span>
       </div>
-             
+              <div className=' w-[221px]'>
+                     
         <div className="grid grid-cols-6 gap-6.25 ">
         <div className="h-4 w-4 rounded-full bg-[#1D3178] " />
         <div className="h-4 w-4 rounded-full bg-[#D4B24C] " />
@@ -172,6 +176,7 @@ const SortAndView = ({setView}) => {
         <div className="h-4 w-4 rounded-full bg-[#B8B29A] " />
 
               
+        </div>
 
                 
       </div>
@@ -181,19 +186,19 @@ const SortAndView = ({setView}) => {
 
             {/* Sizes */}
     <div className="border-b border-[#ECECEC] py-6">
-      <div className="mb-5 flex items-center justify-between">
-        <h3 className="font-jost text-[15px] font-semibold uppercase text-black">
+      <div className="mb-5.75 flex items-center justify-between">
+        <h3 className="font-jost text-[18px] font-medium uppercase text-primary-black">
           Sizes
         </h3>
 
         <span>^</span>
       </div>
 
-      <div className="flex flex-wrap gap-3">
+      <div className="w-[260px] flex flex-wrap gap-4">
         {["XS", "S", "M", "L", "XL", "XXL"].map((size) => (
           <button
             key={size}
-            className="h-10 w-12 border border-[#E5E5E5] text-[13px] text-[#767676] duration-300 hover:border-black hover:text-black"
+            className="h-10 w-12 border border-[#E5E5E5] font-jost font-regular  text-[14px] text-[#767676] duration-300 leading-7.5 hover:border-black hover:text-black"
           >
             {size}
           </button>
@@ -202,8 +207,8 @@ const SortAndView = ({setView}) => {
     </div>
 
     {/* Brands */}
-    <div className="border-b border-[#ECECEC] py-6">
-      <h3 className="mb-5 font-jost text-[15px] font-semibold uppercase text-black">
+    <div className="border-b border-[#ECECEC] mt-10">
+      <h3 className="mb-5 font-jost text-[18px] font-medium uppercase text-primary-black">
         Brands
       </h3>
 
@@ -212,16 +217,16 @@ const SortAndView = ({setView}) => {
         <input
           type="text"
           placeholder="Search"
-          className="h-11 w-full border border-[#E5E5E5] px-4 text-[13px] outline-none"
+          className="h-11 w-full border border-[#E5E5E5] px-4 font-jost font-regular  text-[14px] leading-6 text-[#767676] outline-none"
         />
 
-        <span className="absolute right-4 top-1/2 -translate-y-1/2">
-          🔍
+        <span className="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2">
+          <CiSearch />
         </span>
       </div>
 
       {/* Brand List */}
-      <div className="space-y-4">
+      <div className="space-y-4 mb-4.75">
         {[
           ["Adidas", 2],
           ["Balmain", 7],
@@ -238,12 +243,12 @@ const SortAndView = ({setView}) => {
             <div className="flex items-center gap-3">
               <input type="checkbox" />
 
-              <p className="text-[13px] text-[#767676]">
+              <p className=" font-jost font-regular text-[14px] text-primary-black leading-10">
                 {brand}
               </p>
             </div>
 
-            <span className="text-[13px] text-[#767676]">
+            <span className="font-jost font-regular text-[14px] text-primary-black leading-10">
               {count}
             </span>
           </div>
@@ -251,42 +256,73 @@ const SortAndView = ({setView}) => {
       </div>
     </div>
 
-             {/* Price */}
-    <div className="py-6">
-      <div className="mb-5 flex items-center justify-between">
-        <h3 className="font-jost text-[15px] font-semibold uppercase text-black">
-          Price
-        </h3>
+            {/*   Price    */}
 
-        <span>^</span>
+
+   <Range
+      label="Select your value"
+      step={0.1}
+      min={29}
+      max={940}
+      values={values}
+      onChange={(values) => setValues(values)}
+      renderTrack={({ props, children }) => (
+        <div
+          {...props}
+       
+          
+            className="h-2 w-full rounded"
+            style={{
+              background: getTrackBackground({
+                values,
+                colors: ["#e5e5e5", "black", "#e5e5e5"],
+                min: 29,
+                max: 940,
+              }),
+            }}
+        >
+          {children}
+        </div>
+      )}
+      renderThumb={({ props }) => (
+        <div
+          {...props}
+          key={props.key}
+        
+            className="h-5 w-5 rounded-full bg-white border border-black"
+        />
+      )}
+    />
+     <div className="mt-6 flex justify-between font-jost font-regular text-[#767676] text-base leading-10">
+      <p>Min Price: <span className="font-jost font-regular text-base text-primary-black leading-10">${values[0]}
+      </span></p>
+  
+      <p>Max price: <span className="font-jost font-regular text-base text-primary-black leading-10">${values[1]}
+      </span></p>
+  
       </div>
 
-      {/* Range */}
-      <input type="range" className="w-full" />
-
-      <div className="mt-3 flex justify-between text-[12px] text-[#767676]">
-        <p>Min Price: $29</p>
-        <p>Max Price: $937</p>
-      </div>
 
       {/* Tags */}
-      <div className="mt-6 flex flex-wrap gap-3">
-        <button className="bg-[#F3F3F3] px-4 py-2 text-[12px] text-[#767676]">
-          X BLUES
+      <div className="mt-6 flex flex-cols gap-4.25 ">
+        <button className="group flex items-center font-jost font-regular text-primary-black text-[11px] leading7.5   bg-[#EEEEEE] gap-3.5 px-3 py-2 hover:bg-primary-black t hover:text-white">
+          <AiOutlineClose className='flex w-2.5 h-2.5  text-primary-black transition-all duration-300 group-hover:text-white'/> BLUES
         </button>
 
-        <button className="bg-[#F3F3F3] px-4 py-2 text-[12px] text-[#767676]">
+              <button className=" group flex items-center font-jost font-regular text-primary-black text-[11px] leading7.5  bg-[#EEEEEE] gap-3.5 px-3 py-2 hover:bg-primary-black hover:text-white">
+                <AiOutlineClose className='flex gap-4.5  w-2.5 h-2.5 text-primary-black transition-all duration-300 group-hover:text-white' />
           MAX PRICE: $493
         </button>
 
-        <button className="bg-[#F3F3F3] px-4 py-2 text-[12px] text-[#767676]">
-          X Zara
+        <button className="group flex items-center font-jost font-regular text-primary-black text-[11px] leading7.5   bg-[#EEEEEE] gap-3.5 px-4 py-2 hover:bg-primary-black hover:text-white ">
+          <AiOutlineClose className='flex w-2.5 h-2.5 text-primary-black transition-all duration-300 group-hover:text-white' /> Zara
+        
         </button>
       </div>
 
       {/* Reset */}
-      <button className="mt-5 text-[12px] uppercase text-[#767676]">
-        X Reset Filter
+      <button className=" group mt-3.75 mb-105  flex items-center font-jost font-regular text-primary-black text-[11px] leading7.5   bg-[#EEEEEE] gap-3.5  px-3 py-2 hover:bg-primary-black hover:text-white">
+        <AiOutlineClose className='flex w-2.5 h-2.5 text-primary-black transition-all duration-300 group-hover:text-white' />  Reset Filter
       </button>
   
   
@@ -302,7 +338,7 @@ const SortAndView = ({setView}) => {
 
            </div>
 
-   </div>
+
       
   
 
