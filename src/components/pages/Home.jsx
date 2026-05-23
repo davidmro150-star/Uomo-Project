@@ -10,7 +10,7 @@ import StartingCategory from "../home/StartingCategory";
 import TrendyProducts from "../home/TrendyProducts";
 import Support from "../home/support";
 import Footer from "../layout/Footer";
-
+import PopUp from "../home/PopUp";
 
 
 
@@ -30,11 +30,11 @@ const Home = () => {
       <LimitedProduct />
       <ProductsLogo />
       <Support />
-     
+    
    
    
   
-  </>
+   </>
 
   ) 
     

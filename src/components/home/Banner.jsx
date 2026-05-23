@@ -4,6 +4,7 @@ import { BannerData } from '../../api/bannerdata';
 import SliderLib from "react-slick";
 import "slick-carousel/slick/slick.css";
 import Image from '../common/Image';
+import PopUp from './PopUp';
 
 
 
@@ -11,6 +12,9 @@ import Image from '../common/Image';
 
 
 const Banner = () => { 
+
+
+
 
    const settings = {
      dots: true,
@@ -39,8 +43,9 @@ const Banner = () => {
 
           
     
-    <div className='mx-15'>
+    <div className='mx-15 relative'>
      
+      <PopUp/>
       <Slider {...settings}>
                  {BannerData?.map((item) => (
                    <Image className="w-full text-center"
