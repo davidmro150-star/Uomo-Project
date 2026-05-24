@@ -305,7 +305,7 @@ const SortAndView = ({setView}) => {
 
       {/* Tags */}
       <div className="mt-6 flex flex-cols gap-4.25 ">
-        <button className="group flex items-center font-jost font-regular text-primary-black text-[11px] leading7.5   bg-[#EEEEEE] gap-3.5 px-3 py-2 hover:bg-primary-black t hover:text-white">
+        <button className="group flex items-center font-jost font-regular text-primary-black text-[11px] leading7.5   bg-[#EEEEEE] gap-3.5 px-3 py-2 hover:bg-primary-black  hover:text-white">
           <AiOutlineClose className='flex w-2.5 h-2.5  text-primary-black transition-all duration-300 group-hover:text-white'/> BLUES
         </button>
 
