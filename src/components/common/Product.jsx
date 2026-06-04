@@ -1,9 +1,12 @@
 import React from 'react'
 import Image from './Image'
 import ProductImage from "../../assets/images/productimage.png";
+import { Link } from 'react-router';
 
 const Product = ({item}) => {
   return (
+
+     <Link to={`/product/${item.id}`}>
     <div className='w-full relative group'>
 
       <div className='group'>
@@ -50,7 +53,8 @@ const Product = ({item}) => {
 
  
 
-    </div>
+      </div>
+      </Link>
   )
 } 
 

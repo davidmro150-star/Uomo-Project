@@ -7,6 +7,7 @@ import RootLayout from './components/layout/RootLayout';
 import Home from './components/pages/Home';
 import Shop from './components/pages/Shop';
 import About from './components/pages/About';
+import ShopSingleGrouped from './components/home/Shopsinglepage';
 
 
 
@@ -26,7 +27,12 @@ const App = () => {
     {
           path: "Shop",
           Component: Shop,
-      }
+        },
+    
+       {
+  path: "/product/:id",
+  Component: ShopSingleGrouped,
+}
       ]
       
    
