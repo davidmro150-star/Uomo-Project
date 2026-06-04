@@ -43,7 +43,7 @@ const ShopSingleGrouped = () => {
 
               {/* Info */}
               <div className="lg:w-1/2">
-                <h1 className="mb-2 text-3xl font-bold text-gray-900">
+                <h1 className="mb-2 text-3xl font-bold text-gray-900 font-jost ">
                   {product.title}
                 </h1>
 
@@ -71,7 +71,7 @@ const ShopSingleGrouped = () => {
                 </div>
 
                 {/* Add to cart */}
-                <button className="w-full bg-black py-3 text-white">
+                <button className="w-full bg-black py-3 text-white font-jost text-[16px] ">
                   Add to Cart
                 </button>
 
