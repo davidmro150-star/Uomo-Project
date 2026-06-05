@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Popup from "../../../public/images/images.png";
+import Popup from "../../../public/images/popup.png";
 import { IoCloseOutline } from "react-icons/io5";
 const Banner = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -17,7 +17,7 @@ const Banner = () => {
         
         
       
-    <div className="relative  flex bg-[#E4E4E4] gap-2 items-center justify-center w-[900px] h-[550px] top-10" >
+    <div className="relative  flex bg-[#E4E4E4] gap-2 items-center justify-center w-[800px] h-[350px] top-10" >
       
         
       <button onClick={() => setShowPopup(false)}className="absolute top-4 right-4 text-2xl z-10">
@@ -27,7 +27,7 @@ const Banner = () => {
       {/* Left Image */}
       <div className="w-1/2 h-full">
         <img
-          className="w-[450px]  h-[550px]"
+          className="w-[450px]  h-[350px]"
           src={Popup}
           alt="image"
         />
